@@ -11,10 +11,11 @@
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/drawable/ic_free_icon_ruble_large.xml" value="0.2861111111111111" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/drawable/load_gradient.xml" value="0.30462962962962964" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/drawable/main_gradient.xml" value="0.30462962962962964" />
-        <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_gpu.xml" value="0.33" />
+        <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_buy_gpu.xml" value="0.5" />
+        <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_gpu.xml" value="0.25" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_graph.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_loading.xml" value="0.33" />
-        <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/layout/gpu_item.xml" value="0.67" />
       </map>
     </option>

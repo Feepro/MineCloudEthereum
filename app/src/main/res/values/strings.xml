@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">MineCloudEthereum</string>
-    <string name="allGPU">[{\"name\" : \"GeForce GTX 1060 6 Гб\",\"ethPerSec\":14,\"mhs\":25},{\"name\":\"Radeon RX 570 8GB\",\"ethPerSec\":15,\"mhs\":30},{\"name\":\"GeForce GTX 1080\",\"ethPerSec\":18,\"mhs\":36},{\"name\":\"GeForce GTX 1070\",\"ethPerSec\":15,\"mhs\":30},{\"name\":\"Radeon RX 590\",\"ethPerSec\":20,\"mhs\":40},{\"name\":\"Radeon RX 5600 XT\",\"ethPerSec\":23,\"mhs\":45},{\"name\":\"Radeon RX 5700\",\"ethPerSec\":26,\"mhs\":52},{\"name\":\"GeForce RTX 3060\",\"ethPerSec\":24,\"mhs\":48},{\"name\":\"GeForce GTX 1080 Ti\",\"ethPerSec\":25,\"mhs\":44},{\"name\":\"GeForce RTX 3060 Ti\",\"ethPerSec\":30,\"mhs\":60},{\"name\":\"GeForce RTX 2060 Super\",\"ethPerSec\":22,\"mhs\":43},{\"name\":\"GeForce RTX 2060\",\"ethPerSec\":20,\"mhs\":37},{\"name\":\"Radeon VII\",\"ethPerSec\":45,\"mhs\":85},{\"name\":\"GeForce RTX 3090\",\"ethPerSec\":60,\"mhs\":115},{\"name\":\"GeForce RTX 3080 Ti LHR\",\"ethPerSec\":39,\"mhs\":77}]</string>
+    <string name="allGPU">[
+{\"name\" : \"GeForce GTX 1060 6GB\",\"ethPerSec\":14,\"mhs\":25,\"family\":\"Intell\"},
+{\"name\":\"Radeon RX 570 8GB\",\"ethPerSec\":15,\"mhs\":30,\"family\":\"Emg\"},
+{\"name\":\"GeForce GTX 1080\",\"ethPerSec\":18,\"mhs\":36,\"family\":\"Intell\"},
+{\"name\":\"GeForce GTX 1070\",\"ethPerSec\":15,\"mhs\":30,\"family\":\"Intell\"},
+{\"name\":\"Radeon RX 590\",\"ethPerSec\":20,\"mhs\":40,\"family\":\"Emg\"},
+{\"name\":\"Radeon RX 5600 XT\",\"ethPerSec\":23,\"mhs\":45,\"family\":\"Emg\"},
+{\"name\":\"Radeon RX 5700\",\"ethPerSec\":26,\"mhs\":52,\"family\":\"Emg\"},
+{\"name\":\"GeForce RTX 3060\",\"ethPerSec\":24,\"mhs\":48,\"family\":\"Intell\"},
+{\"name\":\"GeForce GTX 1080 Ti\",\"ethPerSec\":25,\"mhs\":44,\"family\":\"Intell\"},
+{\"name\":\"GeForce RTX 3060 Ti\",\"ethPerSec\":30,\"mhs\":60,\"family\":\"Intell\"},
+{\"name\":\"GeForce RTX 2060 Super\",\"ethPerSec\":22,\"mhs\":43,\"family\":\"Intell\"},
+{\"name\":\"GeForce RTX 2060\",\"ethPerSec\":20,\"mhs\":37,\"family\":\"Intell\"},
+{\"name\":\"Radeon VII\",\"ethPerSec\":45,\"mhs\":85,\"family\":\"Emg\"},
+{\"name\":\"GeForce RTX 3090\",\"ethPerSec\":60,\"mhs\":115,\"family\":\"Intell\"},
+{\"name\":\"GeForce RTX 3080 Ti LHR\",\"ethPerSec\":39,\"mhs\":77,\"family\":\"Intell\"}
+]</string>
+
 </resources>

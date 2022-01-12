@@ -22,8 +22,10 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
+
+    var onResumed = true;
     val debugMode = true;
-    val updateBalanceDelay = 5;
+    val updateBalanceDelay = 1;
     val debugProfile  = ProfileEntity(
         123456,
         0,
@@ -53,23 +55,38 @@ class MainActivity : AppCompatActivity() {
         exchangeRatesTimerStart()
         balanceTimerStart()
         findViewById<ImageView>(R.id.refreshExchangeBtn).setOnClickListener { GlobalScope.launch { updateExchangeUi()} }  //button refresh Exchange
-
+        findViewById<CardView>(R.id.upSpeedCard).setOnClickListener {
+            showGpuActivity(currentUser)
+        }
+        findViewById<ImageView>(R.id.showGPU).setOnClickListener {
+            showGpuActivity(currentUser)
+        }
         //Log.i("TAG", "onCreate: "+ Json.encodeToString(ProfileEntity(1,2,ArrayList<GPU?>(),3)))
 
     }
 
-    private fun balanceTimerStart() {
+    private fun showGpuActivity(currentUser: ProfileEntity) {
+        val gpuIntent = Intent(this,GpuActivity::class.java)
+        gpuIntent.putExtra("currentUser", Json.encodeToString(currentUser))
+        startActivity(gpuIntent)
+    }
 
-        GlobalScope.launch {
-            while (true){
-                currentUser.balance += currentUser.totalEthPerSec*updateBalanceDelay
-                runOnUiThread {
-                    updateBalance(currentExchange.rubToEth!!)
-                    Log.i(TAG, "balanceTimerStart: "+((currentUser.balance.toDouble()/1000000000).toBigDecimal().toPlainString()))
+    private fun balanceTimerStart() {
+            GlobalScope.launch {
+                while (true) {
+                    if(onResumed) {
+                        currentUser.balance += currentUser.totalEthPerSec * updateBalanceDelay
+                        runOnUiThread {
+                            updateBalance(currentExchange.rubToEth!!)
+                            Log.i(TAG,
+                                "balanceTimerStart: " + ((currentUser.balance.toDouble() / 1000000000).toBigDecimal()
+                                    .toPlainString())
+                            )
+                        }
+                        delay(1000 * updateBalanceDelay.toLong())
+                    }
                 }
-                delay(1000*updateBalanceDelay.toLong())
             }
-        }
     }
 
     private fun exchangeRatesTimerStart() {
@@ -99,47 +116,68 @@ class MainActivity : AppCompatActivity() {
             }
         }    //update Timer
     }
+
     private suspend fun updateExchangeUi(){
-        val ethToRubTW = findViewById<TextView>(R.id.ethToRub)
-        val rubToEth = findViewById<TextView>(R.id.rubToEth)
-        val exchangeCard = findViewById<CardView>(R.id.exchangeCard)
+        if(onResumed) {
+            val ethToRubTW = findViewById<TextView>(R.id.ethToRub)
+            val rubToEth = findViewById<TextView>(R.id.rubToEth)
+            val exchangeCard = findViewById<CardView>(R.id.exchangeCard)
 
-        currentExchange = Exchange().getValidExchange()!! //todo
-        runOnUiThread {
-            if(currentExchange!=null) {
-                ethToRubTW.text = currentExchange.ethToRub
-                rubToEth.text = currentExchange.rubToEth
-                updateBalance(currentExchange.rubToEth!!) //todo
+            currentExchange = Exchange().getValidExchange()!! //todo
+            runOnUiThread {
+                if (currentExchange != null) {
+                    ethToRubTW.text = currentExchange.ethToRub
+                    rubToEth.text = currentExchange.rubToEth
+                    updateBalance(currentExchange.rubToEth!!) //todo
 
-                findViewById<ImageView>(R.id.refreshExchangeBtn).startAnimation(AnimationUtils.loadAnimation(baseContext,R.anim.rotate360))
+                    findViewById<ImageView>(R.id.refreshExchangeBtn).startAnimation(
+                        AnimationUtils.loadAnimation(
+                            baseContext,
+                            R.anim.rotate360
+                        )
+                    )
 
-                val render = Render(baseContext)
-                render.setAnimation(Attention().Bounce(exchangeCard))
-                render.start()
+                    val render = Render(baseContext)
+                    render.setAnimation(Attention().Bounce(exchangeCard))
+                    render.start()
 
 
-            }else{
-                //ConnectionError TODO
+                } else {
+                    //ConnectionError TODO
+                }
             }
-
         }
     }
     private fun updateBalance(rubToEth:String){
-        val balanceTW = findViewById<EvaporateTextView>(R.id.balance)
-        val rubBalanceTW = findViewById<EvaporateTextView>(R.id.rubBalance)
+        if(onResumed) {
+            val balanceTW = findViewById<EvaporateTextView>(R.id.balance)
+            val rubBalanceTW = findViewById<EvaporateTextView>(R.id.rubBalance)
 
-        balanceTW.animateText(
-            DecimalFormat("#0.000000000").format(
-                (currentUser.balance.toDouble()/1000000000).toBigDecimal()
+
+            balanceTW.animateText(
+                DecimalFormat("#0.000000000").format(
+                    (currentUser.balance.toDouble() / 1000000000).toBigDecimal()
+                )
             )
-        )
 
-        rubBalanceTW.animateText(
-            "~ "+DecimalFormat("0.000").format(((
-                    currentUser.balance.toDouble()/1000000000*currentExchange.ethToRub!!
-                        .replace(" ","")
-                        .toInt()))
-                .toBigDecimal())
-        )
+            rubBalanceTW.animateText(
+                "~ " + DecimalFormat("0.000").format(
+                    ((
+                            currentUser.balance.toDouble() / 1000000000 * currentExchange.ethToRub!!
+                                .replace(" ", "")
+                                .toInt()))
+                        .toBigDecimal()
+                )
+            )
+        }
+    }
+    override fun onPause() {
+        super.onPause()
+        onResumed = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        onResumed = true;
     }
 }
