@@ -27,6 +27,7 @@ class GpuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gpu)
 
         topGPU = Json.decodeFromString(resources.getString(R.string.allGPU))
+        topGPU.sortByDescending { it.ethPerSec }
         topGPU.forEach { gpu ->
             when(gpu.family){
                 GpuFamily.Intell -> intellGPU.add(gpu)
@@ -43,23 +44,22 @@ class GpuActivity : AppCompatActivity() {
 
             val userGpuList = findViewById<RecyclerView>(R.id.user_gpu_list)
             userGpuList.layoutManager = LinearLayoutManager(this)
-            userGpuList.adapter = CustomRecyclerAdapter(currentUser.gpuArray!!)
+            userGpuList.adapter = CustomRecyclerAdapter(currentUser.gpuArray!!,this)
         } else
             Toast.makeText(this,"Пользователь не определен",Toast.LENGTH_SHORT)
 
         val top_gpu_list = findViewById<RecyclerView>(R.id.top_gpu_list)
         top_gpu_list.layoutManager = LinearLayoutManager(this)
-        top_gpu_list.adapter = CustomRecyclerAdapter(topGPU)
+        top_gpu_list.adapter = CustomRecyclerAdapter(topGPU,this)
 
         findViewById<ImageView>(R.id.upgradeIntell).setOnClickListener {
-            top_gpu_list.adapter = CustomRecyclerAdapter(intellGPU)
+            top_gpu_list.adapter = CustomRecyclerAdapter(intellGPU,this)
         }
         findViewById<ImageView>(R.id.upgradeEmd).setOnClickListener {
-            top_gpu_list.adapter = CustomRecyclerAdapter(emgGPU)
+            top_gpu_list.adapter = CustomRecyclerAdapter(emgGPU,this)
         }
-
         findViewById<RainbowTextView>(R.id.upgradeAll).setOnClickListener {
-            top_gpu_list.adapter = CustomRecyclerAdapter(topGPU)
+            top_gpu_list.adapter = CustomRecyclerAdapter(topGPU,this)
         }
     }
 }

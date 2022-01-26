@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/load_gradient"
+        android:background="@color/backgroundMedium"
         android:paddingBottom="30dp">
 
         <androidx.cardview.widget.CardView
@@ -19,7 +19,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="-30dp"
             android:layout_marginEnd="1dp"
-            app:cardBackgroundColor="#88A6B5"
+            app:cardBackgroundColor="@color/backgroundDark"
             app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
                 android:paddingBottom="10dp"
                 android:text="Ваши видеокарты"
                 android:textAlignment="center"
-                android:textColor="#161C4C"
+                android:textColor="#FFFFFF"
                 android:textSize="34sp" />
         </androidx.cardview.widget.CardView>
 
@@ -80,6 +80,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/backgroundDark"
             app:cardCornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

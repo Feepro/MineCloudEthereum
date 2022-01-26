@@ -15,7 +15,17 @@
 
     <color name="level1">#B6B6B6</color>
     <color name="level2">#8BC34A</color>
-    <color name="level3">#2196F3</color>
+    <color name="level3">#2136F3</color>
     <color name="level4">#673AB7</color>
     <color name="level5">#FFE300</color>
+
+<!--    Like Kirill -->
+    <color name="backgroundDark">#2d3f63</color>
+    <color name="backgroundMedium">#435e95</color>
+    <color name="backgroundCard">#6e9bf6</color>
+    <color name="backgroundLight">#b1c4ec</color>
+    <color name="backgroundButton">#8b74e8</color>
+    <color name="backgroundButtonAccent">#e7907f</color>
+    <color name="backgroundGreen">#b7e851</color>
+
 </resources>

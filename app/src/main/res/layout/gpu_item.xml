@@ -6,10 +6,10 @@
     android:layout_height="75dp"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
-    app:cardBackgroundColor="#F46767"
     app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parentBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -30,8 +30,8 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/fregat_bold"
             android:text="RTX 380TI"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView13"
             app:layout_constraintTop_toTopOf="parent" />
@@ -40,11 +40,11 @@
             android:id="@+id/gpu_speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/fregat_bold"
             android:text="300 Mh/s ~ 0.00003 ETH/s"
-            android:textColor="#86A3F4"
-            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView13" />

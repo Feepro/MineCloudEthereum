@@ -15,7 +15,7 @@
 {\"name\":\"GeForce RTX 2060\",\"ethPerSec\":20,\"mhs\":37,\"family\":\"Intell\"},
 {\"name\":\"Radeon VII\",\"ethPerSec\":45,\"mhs\":85,\"family\":\"Emg\"},
 {\"name\":\"GeForce RTX 3090\",\"ethPerSec\":60,\"mhs\":115,\"family\":\"Intell\"},
-{\"name\":\"GeForce RTX 3080 Ti LHR\",\"ethPerSec\":39,\"mhs\":77,\"family\":\"Intell\"}
+{\"name\":\"GeForce RTX 3080 Ti LHR\",\"ethPerSec\":51,\"mhs\":99,\"family\":\"Intell\"}
 ]</string>
 
 </resources>

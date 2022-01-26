@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_gradient"
-    android:backgroundTint="#EBE6E4E4"
+    android:background="@color/backgroundMedium"
     android:backgroundTintMode="multiply"
     tools:context=".MainActivity">
 
@@ -16,7 +15,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="-30dp"
         android:layout_marginEnd="1dp"
-        app:cardBackgroundColor="#88A6B5"
+        app:cardBackgroundColor="@color/backgroundDark"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +29,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
+            android:visibility="gone"
             app:srcCompat="@drawable/money_history" />
 
         <ImageView
@@ -44,15 +44,14 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
             android:layout_gravity="bottom|left"
             android:layout_marginLeft="16dp"
-            android:layout_marginBottom="12dp"
             android:scaleType="centerCrop"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:srcCompat="@drawable/ic_ethereum_light"
-            tools:visibility="invisible" />
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/textView5"
@@ -61,13 +60,13 @@
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/fregat_regular"
-            android:text="Баланс"
+            android:text="MineCloud"
             android:textAlignment="center"
-            android:textColor="#133446"
+            android:textColor="#FFFFFF"
             android:textSize="34sp"
             android:textStyle="bold"
-            android:visibility="gone"
-            tools:visibility="gone" />
+            android:visibility="visible"
+            tools:visibility="visible" />
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
@@ -90,29 +89,10 @@
             app:cardBackgroundColor="#9E8DB9"
             app:cardCornerRadius="30dp">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|right"
-                android:layout_margin="20dp"
-                android:fontFamily="@font/fregat_bold"
-                android:text="Графики"
-                android:textAlignment="center"
-                android:textColor="#2A154B	"
-                android:textSize="24sp" />
-
-            <ImageView
-                android:id="@+id/refreshExchangeBtn"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right|top"
-                android:layout_margin="20dp"
-                app:srcCompat="@android:drawable/stat_notify_sync" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/backgroundCard"
                 android:orientation="vertical"
                 android:paddingBottom="20dp">
 
@@ -136,7 +116,7 @@
                     android:paddingBottom="10dp"
                     android:text="Курс"
                     android:textAlignment="center"
-                    android:textColor="#161C4C"
+                    android:textColor="#FFFFFF"
                     android:textSize="34sp" />
 
                 <LinearLayout
@@ -160,7 +140,7 @@
                         android:gravity="center"
                         android:lineSpacingExtra="8sp"
                         android:text="1"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="30sp" />
 
                     <TextView
@@ -178,7 +158,7 @@
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:text="="
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="36sp" />
 
                     <TextView
@@ -194,7 +174,7 @@
                         android:gravity="center"
                         android:lineSpacingExtra="8sp"
                         android:text="278 337"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="30sp" />
                 </LinearLayout>
 
@@ -220,7 +200,7 @@
                         android:gravity="center"
                         android:lineSpacingExtra="8sp"
                         android:text="1"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="30sp" />
 
                     <TextView
@@ -238,7 +218,7 @@
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:text="="
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="36sp" />
 
                     <TextView
@@ -254,7 +234,7 @@
                         android:gravity="center"
                         android:lineSpacingExtra="8sp"
                         android:text="0.0000036"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="30sp" />
                 </LinearLayout>
 
@@ -294,6 +274,27 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/refreshExchangeBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:layout_margin="20dp"
+                app:srcCompat="@android:drawable/stat_notify_sync" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/fregat_bold"
+                android:text="Графики"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundDark"
+                android:textSize="24sp" />
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -459,7 +460,7 @@
                         app:srcCompat="@drawable/speedometer" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/mhsTw"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
@@ -482,9 +483,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
-            app:cardBackgroundColor="#9E8DB9"
+            app:cardBackgroundColor="@color/backgroundDark"
             app:cardCornerRadius="30dp"
-            app:cardUseCompatPadding="false" >
+            app:cardUseCompatPadding="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
