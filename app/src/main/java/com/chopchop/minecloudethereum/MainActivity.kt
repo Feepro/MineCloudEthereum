@@ -1,13 +1,14 @@
 package com.chopchop.minecloudethereum
 
+import android.R.attr.button
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.hanks.htextview.evaporate.EvaporateTextView
 import kotlinx.coroutines.GlobalScope
@@ -20,6 +21,7 @@ import render.animations.Render
 import java.text.DecimalFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,9 +57,11 @@ class MainActivity : AppCompatActivity() {
         exchangeRatesTimerStart()
         balanceTimerStart()
         findViewById<ImageView>(R.id.refreshExchangeBtn).setOnClickListener { GlobalScope.launch { updateExchangeUi()} }  //button refresh Exchange
+
         findViewById<CardView>(R.id.upSpeedCard).setOnClickListener {
             showGpuActivity(currentUser)
         }
+
         findViewById<ImageView>(R.id.showGPU).setOnClickListener {
             showGpuActivity(currentUser)
         }

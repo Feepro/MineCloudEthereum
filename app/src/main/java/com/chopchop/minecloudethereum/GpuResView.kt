@@ -32,13 +32,15 @@ class CustomRecyclerAdapter(private val gpu: List<GPU>,private val context: Cont
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.largeTextView.text = gpu[position].name
         holder.smallTextView.text = gpu[position].name
-        when(gpu[position].ethPerSec){
-            in 0..15 ->   holder.parentBackground.setBackgroundResource(R.color.level1)
-            in 15..20 ->  holder.parentBackground.setBackgroundResource(R.color.level2)
-            in 20..25 ->  holder.parentBackground.setBackgroundResource(R.color.level3)
-            in 25..40 ->  holder.parentBackground.setBackgroundResource(R.color.level4)
-            else ->       holder.parentBackground.setBackgroundResource(R.color.level5)
-        }
+        holder.parentBackground.setBackgroundResource(
+            when(gpu[position].ethPerSec){
+                in 0..15 ->   R.color.level1
+                in 15..20 ->  R.color.level2
+                in 20..25 ->  R.color.level3
+                in 25..40 ->  R.color.level4
+                else ->       R.color.level5
+            }
+        )
         holder.parentBackground.setOnClickListener {
             val buyIntent = Intent(context,BuyGpuActivity::class.java)
             buyIntent.putExtra("gpu", Json.encodeToString(gpu[position]))

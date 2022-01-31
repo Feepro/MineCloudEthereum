@@ -16,6 +16,7 @@ class GpuActivity : AppCompatActivity() {
         GPU("1",1,1,GpuFamily.Intell),
         GPU("2",1,1,GpuFamily.Intell),
         GPU("3",2,2,GpuFamily.none)
+
     )
 
     var intellGPU = arrayListOf<GPU>()
