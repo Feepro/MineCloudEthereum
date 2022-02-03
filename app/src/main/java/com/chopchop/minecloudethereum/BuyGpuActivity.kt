@@ -38,9 +38,9 @@ class BuyGpuActivity : AppCompatActivity() {
         val ethEq   = findViewById<TextView>(R.id.ethEq)
 
         cardName.text = targetGpu.name
-        totalPrice.text = (count*targetGpu.price).toString()
+        totalPrice.text = (count*targetGpu.price).toString() + " Руб"
         mhsTw.text = (count*targetGpu.mhs).toString()
-        ethEq.text = "~ "+DecimalFormat("#0.000000000").format(((count*targetGpu.ethPerSec).toDouble() / 1000000000).toBigDecimal())
+        ethEq.text = "~ "+DecimalFormat("#0.000000000").format(((count*targetGpu.ethPerSec).toDouble() / 1000000000).toBigDecimal()) + " ETH/sec"
     }
 
     private fun initPriceButtons() {
