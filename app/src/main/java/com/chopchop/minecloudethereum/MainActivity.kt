@@ -1,6 +1,5 @@
 package com.chopchop.minecloudethereum
 
-import android.R.attr.button
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
@@ -126,10 +125,19 @@ class MainActivity : AppCompatActivity() {
             val ethToRubTW = findViewById<TextView>(R.id.ethToRub)
             val rubToEth = findViewById<TextView>(R.id.rubToEth)
             val exchangeCard = findViewById<CardView>(R.id.exchangeCard)
+            val currencyPercent = findViewById<TextView>(R.id.currencyPercent)
 
             currentExchange = Exchange().getValidExchange()!! //todo
             runOnUiThread {
                 if (currentExchange != null) {
+                    val rubToEthBefore = ethToRubTW.text.toString().replace("\\s".toRegex(), "").toDouble()
+                    val rubToEthAfter = currentExchange.ethToRub?.replace("\\s".toRegex(), "")?.toDouble() ?:rubToEthBefore
+
+                    if(rubToEthAfter!=rubToEthBefore){
+                        val currencyPercentValue = (rubToEthBefore/rubToEthAfter)*100 - 100
+                        currencyPercent.text = currencyPercentValue.toString().substring(0,6)+" %"
+                        if(currencyPercentValue>0) currencyPercent.text = "+" + currencyPercent.text
+                    }
                     ethToRubTW.text = currentExchange.ethToRub
                     rubToEth.text = currentExchange.rubToEth
                     updateBalance(currentExchange.rubToEth!!) //todo
@@ -140,6 +148,8 @@ class MainActivity : AppCompatActivity() {
                             R.anim.rotate360
                         )
                     )
+
+
 
                     val render = Render(baseContext)
                     render.setAnimation(Attention().Bounce(exchangeCard))

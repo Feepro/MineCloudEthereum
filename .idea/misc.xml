@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/1/StudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_buy_gpu.xml" value="0.25" />
+        <entry key="..\:/Users/1/StudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_graph.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/1/StudioProjects/MineCloudEthereum/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/gpugenerator/src/main/res/layout/activity_generator.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/drawable/ic_ethereum.xml" value="0.30462962962962964" />
         <entry key="..\:/Users/Oao/AndroidStudioProjects/MineCloudEthereum/app/src/main/res/drawable/ic_ethereum_bottom.xml" value="0.30462962962962964" />

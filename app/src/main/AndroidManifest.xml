@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".GpuActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".GraphActivity"
             android:exported="false" />

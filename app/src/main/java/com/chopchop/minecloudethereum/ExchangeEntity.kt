@@ -33,7 +33,7 @@ class Exchange : ExchangeListener {
             val text = urlConnection.inputStream.bufferedReader().readText()
             val ethToRub = text.substringAfter("<b>1 ETH</b> = <b>").substringBefore(" RUB")
             val rubToEth = text.substringAfter("<b>1 RUB</b> = <b>").substringBefore(" ETH")
-            val currentExchange = ExchangeEntity(ethToRub, rubToEth)
+            val currentExchange = ExchangeEntity(ethToRub, rubToEth,)
 
             Log.i(TAG, "getValidExchange: "+Json.encodeToString(currentExchange))
             currentExchange

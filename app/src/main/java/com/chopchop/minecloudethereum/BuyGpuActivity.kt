@@ -25,7 +25,7 @@ class BuyGpuActivity : AppCompatActivity() {
             GPU("NONE",2,3,GpuFamily.Intell,100);
 
 
-        val buyBtn = findViewById<CardView>(R.id.buyBtn)
+        val buyBtn = findViewById<CardView>(R.id.backBuyBtn)
 
         initInfo(targetGpu,count)
         initPriceButtons()
@@ -47,6 +47,11 @@ class BuyGpuActivity : AppCompatActivity() {
         val countTw = findViewById<TextView>(R.id.countTw)
         val plusBtn = findViewById<ImageView>(R.id.plusBtn)
         val minBtn  = findViewById<ImageView>(R.id.minBtn)
+        val backBtn = findViewById<CardView>(R.id.backBuyBtn)
+
+        backBtn.setOnClickListener{
+            finish()
+        }
         plusBtn.setOnClickListener {
             count++
             countTw.text = count.toString()
